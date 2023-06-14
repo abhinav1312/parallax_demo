@@ -5,19 +5,13 @@ import Land from './img/land.png'
 import { useState } from 'react'
 function App() {
 
-  const [zoom, setZoom] = useState(5);
-  const[zoom1, setZoom1] = useState(0);
-
-
-    // console.log(offset); 
-
+  const [fs, setFs] = useState(5);
+  const[fs1, setFs1] = useState(0);
     const handleScroll = (event) => {
       const scrollTop = event.target.scrollTop;
-      console.log("Scrolltop: ", scrollTop/100);
-
       // setScrollTop(scrollTop);
-      setZoom(5 - scrollTop*.01)
-      setZoom1(scrollTop/100)
+      setFs(5 - scrollTop*.01)
+      setFs1(scrollTop/100)
     };
 
   return (
@@ -41,7 +35,7 @@ function App() {
           speed={2}
           // onClick={() => ref.current.scrollTo(3)}
         >
-          <h2 style={{fontSize: `${zoom}rem`}} className='font-bold text-white text-center'>Welcome to my website</h2>
+          <h2 style={{fontSize: `${fs}rem`}} className='font-bold text-white text-center'>Welcome to my website</h2>
         </ParallaxLayer>
         
 
@@ -50,7 +44,7 @@ function App() {
           offset={1}
           speed={1}
         >
-          <h2 style={{fontSize: `${zoom1*.4}rem`}} className='font-bold text-white text-center' >Scroll genlty for safer landing </h2>
+          <h2 style={{fontSize: `${fs1*.4}rem`}} className='font-bold text-white text-center' >Scroll genlty for safer landing </h2>
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -64,7 +58,7 @@ function App() {
           offset={2.5}
           speed={1}
         >
-          <h2 style={{fontSize: `${zoom1*1.5/10}rem`}} className='font-bold text-white text-center'> Doing great hooman </h2>
+          <h2 style={{fontSize: `${fs1*1.5/10}rem`}} className='font-bold text-white text-center'> Doing great hooman </h2>
         </ParallaxLayer>
 
         <ParallaxLayer
